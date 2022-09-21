@@ -19,7 +19,7 @@ RUN apk update && apk add --no-cache jq tini && apk upgrade --no-cache
 
 USER node-red
 
-RUN npm install github:anerdins/node-red-contrib-nibepi#1.2.1 --omit=dev --unsafe-perm --no-update-notifier --no-fund
+RUN npm install github:colin-campbell/node-red-contrib-nibepi#container-fixes --omit=dev --unsafe-perm --no-update-notifier --no-fund
 
 
 ENTRYPOINT ["/sbin/tini", "--", "./entrypoint.sh"]

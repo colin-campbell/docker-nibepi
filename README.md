@@ -4,6 +4,12 @@
 
 Check the file [mods.jq](mods.jq) to modify the default config during build with any values you wish using [jq](https://stedolan.github.io/jq/)
 
+For example, you should edit mods.jq to enter in the remote address to your nibegw:
+
+```
+.serial.port = "x.x.x.x"
+```
+
 ## To test:
 
 - Build container with
@@ -15,5 +21,5 @@ docker build -t nibepi .
 - And run with
 
 ```
-docker run -d --name nibepi -v $PWD/data:/data  -v $PWD/config:/etc/nibepi -p 1880:1880 nibepi
+docker run -d --name nibepi -v $PWD/data:/data  -v $PWD/config:/etc/nibepi -p 9999:9999/udp -p 1880:1880 nibepi
 ```
